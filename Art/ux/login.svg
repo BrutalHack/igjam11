@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="960"
+   height="720"
+   viewBox="0 0 960.00002 720"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="login.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffff00"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="554.25217"
+     inkscape:cy="351.03162"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     units="px"
+     borderlayer="true"
+     inkscape:snap-perpendicular="true"
+     inkscape:snap-tangential="true"
+     inkscape:snap-path-mask="true"
+     inkscape:snap-path-clip="true"
+     guidetolerance="20"
+     gridtolerance="10000"
+     inkscape:snap-object-midpoints="false"
+     inkscape:snap-center="false"
+     inkscape:object-paths="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:bbox-paths="true"
+     inkscape:window-width="1871"
+     inkscape:window-height="1056"
+     inkscape:window-x="49"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:snap-grids="true"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid5596" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-332.36218)">
+    <rect
+       style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:5.5999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5580"
+       width="960"
+       height="720"
+       x="-2.5"
+       y="333.25504" />
+    <rect
+       style="fill:#42cb00;fill-opacity:1;stroke:none;stroke-width:5.5999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5582"
+       width="960"
+       height="120"
+       x="1.1368684e-13"
+       y="332.36218" />
+    <g
+       id="g4378"
+       transform="translate(2.5,-84.999999)">
+      <rect
+         y="697.36218"
+         x="277.5"
+         height="59.999996"
+         width="420"
+         id="rect5590-3"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:5.5999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="296.03711"
+         y="732.87976"
+         id="text4333"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="296.03711"
+           y="732.87976"
+           id="tspan4341"
+           style="font-size:20px">User:            _________________________</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="411.03711"
+         y="732.87976"
+         id="text4333-7"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="411.03711"
+           y="732.87976"
+           id="tspan4341-5"
+           style="font-size:20px" /></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="406.07422"
+       y="408.39734"
+       id="text5584"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5586"
+         x="406.07422"
+         y="408.39734">Gone Mail</tspan></text>
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:5.5999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path5588"
+       cx="335.86609"
+       cy="392.74252"
+       r="50" />
+    <g
+       transform="matrix(1,0,0,1.1106231,509.47197,-15.444605)"
+       id="g5312">
+      <rect
+         y="421.01682"
+         x="430.32498"
+         height="540.43158"
+         width="20.203051"
+         id="rect4981"
+         style="fill:#d2d2d2;fill-opacity:1;stroke:none;stroke-width:5.06799984;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         y="587.95294"
+         x="434.6265"
+         height="170.69901"
+         width="11.600013"
+         id="rect4981-9"
+         style="fill:#b4b4b4;fill-opacity:1;stroke:#b4b4b4;stroke-width:8.35164928;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       id="g4378-3"
+       transform="translate(2.5,-20.000002)">
+      <rect
+         y="697.36218"
+         x="277.5"
+         height="59.999996"
+         width="420"
+         id="rect5590-3-5"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:5.5999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="296.03711"
+         y="732.87976"
+         id="text4333-6"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="296.03711"
+           y="732.87976"
+           style="font-size:20px"
+           id="tspan5055">Password:    _________________________</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="411.03711"
+         y="732.87976"
+         id="text4333-7-1"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="411.03711"
+           y="732.87976"
+           id="tspan4341-5-2"
+           style="font-size:20px" /></text>
+    </g>
+    <g
+       id="g4378-3-7"
+       transform="translate(-197.5,-110)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="388.41309"
+         y="732.87976"
+         id="text4333-7-1-0"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="388.41309"
+           y="732.87976"
+           id="tspan4341-5-2-6"
+           style="font-size:20px" /></text>
+    </g>
+    <rect
+       style="fill:#42cb00;fill-opacity:1;stroke:#42cb00;stroke-width:10.0618906;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5059"
+       width="187.06465"
+       height="49.683823"
+       x="508.03094"
+       y="747.39313" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="572.90527"
+       y="778.20203"
+       id="text5061"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5063"
+         x="572.90527"
+         y="778.20203"
+         style="font-size:20px">Login</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:10.54601669;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5059-1"
+       width="206.45398"
+       height="49.45396"
+       x="285.27301"
+       y="747.63519" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="303.14941"
+       y="778.20203"
+       id="text5061-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5063-7"
+         x="303.14941"
+         y="778.20203"
+         style="font-size:20px">Forgot Password</tspan></text>
+  </g>
+</svg>
