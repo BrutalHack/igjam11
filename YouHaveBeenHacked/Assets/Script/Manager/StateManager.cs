@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class StateManager : MonoBehaviour
 {
@@ -14,10 +15,12 @@ public class StateManager : MonoBehaviour
     public FacebookManager FacebookManager;
     public LetterManager LetterManager;
     public PaketManager PaketManager;
+    public Text DebugText;
 
     public void NextState()
     {
         State++;
+        DebugText.text = State.ToString();
         TwitterManager.HandleNewState(State);
         HandyManager.HandleNewState(State);
         MailManager.HandleNewState(State);
