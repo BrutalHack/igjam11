@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class HandyManager : Manager
@@ -16,21 +17,20 @@ public class HandyManager : Manager
         switch (state)
         {
             case State.CatPictureWhatsappNotification:
+                ShowBuddyMessages();
                 break;
             case State.CatPictureWhatsappView:
-                ShowBuddyMessages();
                 break;
             case State.CatPictureMailLogin:
                 break;
             case State.BreakupWhatsappGirlfriendNotification:
+                ShowGFMessages();
                 break;
             case State.BreakupWhatsappGirlfriendView:
-                ShowGFMessages();
                 break;
             case State.BreakupWhatsappBuddyNotification:
                 break;
             case State.BreakupWhatsappBuddyView:
-                ShowBuddyMessages();
                 break;
         }
     }
@@ -40,11 +40,8 @@ public class HandyManager : Manager
         HandyOpen.gameObject.SetActive(true);
         HandyGlassPane.gameObject.SetActive(true);
         HandyClosed.gameObject.SetActive(false);
-
-        if (StateManager.State == State.CatPictureWhatsappNotification)
-        {
-            StateManager.NextState();
-        }
+        AdvanceStateIfIn(State.CatPictureWhatsappNotification, State.BreakupWhatsappGirlfriendNotification,
+            State.BreakupWhatsappBuddyNotification);
     }
 
     public void CloseHandy()
@@ -52,13 +49,21 @@ public class HandyManager : Manager
         HandyOpen.SetActive(false);
         HandyClosed.gameObject.SetActive(true);
         HandyGlassPane.SetActive(false);
-        if (StateManager.State == State.CatPictureWhatsappView)
-        {
-            StateManager.NextState();
-        }
+        AdvanceStateIfIn(State.CatPictureWhatsappView, State.BreakupWhatsappBuddyView);
     }
 
     public void ShowBuddyMessages()
+    {
+        ShowBuddyInternal();
+        AdvanceStateIfIn(State.BreakupWhatsappBuddyNotification);
+    }
+
+    public void ShowGFMessages()
+    {
+        ShowGFInternal();
+    }
+
+    private void ShowBuddyInternal()
     {
         ContentFreundin.SetActive(
             false);
@@ -67,7 +72,7 @@ public class HandyManager : Manager
         ScrollView.content = ContentKumpel.GetComponent<RectTransform>();
     }
 
-    public void ShowGFMessages()
+    private void ShowGFInternal()
     {
         ContentFreundin.SetActive(
             true);
@@ -75,5 +80,13 @@ public class HandyManager : Manager
             false);
         SendButton.panel = ContentFreundin.GetComponent<RectTransform>();
         ScrollView.content = ContentFreundin.GetComponent<RectTransform>();
+    }
+
+    private void AdvanceStateIfIn(params State[] states)
+    {
+        if (states.Contains(StateManager.State))
+        {
+            StateManager.NextState();
+        }
     }
 }
