@@ -8,6 +8,8 @@ public class HandyManager : Manager
     public GameObject HandyOpen;
     public GameObject HandyGlassPane;
     public Button HandyClosed;
+    public SendMessage SendButton;
+    public ScrollRect ScrollView;
 
     public override void HandleNewState(State state)
     {
@@ -16,17 +18,19 @@ public class HandyManager : Manager
             case State.CatPictureWhatsappNotification:
                 break;
             case State.CatPictureWhatsappView:
-                ContentKumpel.SetActive(true);
+                ShowBuddyMessages();
                 break;
             case State.CatPictureMailLogin:
                 break;
             case State.BreakupWhatsappGirlfriendNotification:
                 break;
             case State.BreakupWhatsappGirlfriendView:
+                ShowGFMessages();
                 break;
             case State.BreakupWhatsappBuddyNotification:
                 break;
             case State.BreakupWhatsappBuddyView:
+                ShowBuddyMessages();
                 break;
         }
     }
@@ -52,5 +56,24 @@ public class HandyManager : Manager
         {
             StateManager.NextState();
         }
+    }
+
+    public void ShowBuddyMessages()
+    {
+        ContentFreundin.SetActive(
+            false);
+        ContentKumpel.SetActive(true);
+        SendButton.panel = ContentKumpel.GetComponent<RectTransform>();
+        ScrollView.content = ContentKumpel.GetComponent<RectTransform>();
+    }
+
+    public void ShowGFMessages()
+    {
+        ContentFreundin.SetActive(
+            true);
+        ContentKumpel.SetActive(
+            false);
+        SendButton.panel = ContentFreundin.GetComponent<RectTransform>();
+        ScrollView.content = ContentFreundin.GetComponent<RectTransform>();
     }
 }
