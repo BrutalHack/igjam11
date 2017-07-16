@@ -125,8 +125,6 @@ public class HandyManager : Manager
                 AddMessage("but first! call your bank and credit card company... anything financial!",
                     SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar, ContentKumpel);
                 break;
-            case State.PhoneGoneWhatsappBuddyProtectPhoneView:
-                break;
             case State.PhoneGoneLocked:
                 notifyBuddy(false);
                 WaitAndNextState();
@@ -166,15 +164,21 @@ public class HandyManager : Manager
         {
             case State.CatPictureWhatsappNotification:
             case State.BreakupWhatsappBuddyNotification:
+            case State.FacebookShitpostWhatsappBuddyNotification:
+            case State.MailIsGoneWhatsappBuddyNotification:
+                case State.PhoneGoneWhatsappBuddyProtectPhoneNotification:
                 ShowBuddyInternal();
                 break;
             case State.BreakupWhatsappGirlfriendNotification:
             case State.BreakupWhatsappGirlfriendSecondMessageNotification:
+            case State.NudepicsWhatsappGirlfriendNotification:
                 ShowGFInternal();
                 break;
         }
         AdvanceStateIfIn(State.CatPictureWhatsappNotification, State.BreakupWhatsappGirlfriendNotification,
-            State.BreakupWhatsappBuddyNotification, State.BreakupWhatsappGirlfriendSecondMessageNotification,State.FacebookShitpostWhatsappBuddyNotification);
+            State.BreakupWhatsappBuddyNotification, State.BreakupWhatsappGirlfriendSecondMessageNotification,
+            State.FacebookShitpostWhatsappBuddyNotification, State.MailIsGoneWhatsappBuddyNotification,
+            State.NudepicsWhatsappGirlfriendNotification,State.PhoneGoneWhatsappBuddyProtectPhoneNotification);
     }
 
     public void CloseHandy()
@@ -187,13 +191,15 @@ public class HandyManager : Manager
     public void ShowBuddyMessages()
     {
         ShowBuddyInternal();
-        AdvanceStateIfIn(State.BreakupWhatsappBuddyNotification,State.FacebookShitpostWhatsappBuddyNotification);
+        AdvanceStateIfIn(State.BreakupWhatsappBuddyNotification, State.FacebookShitpostWhatsappBuddyNotification,
+            State.MailIsGoneWhatsappBuddyNotification,State.PhoneGoneWhatsappBuddyProtectPhoneNotification);
     }
 
     public void ShowGFMessages()
     {
         ShowGFInternal();
-        AdvanceStateIfIn(State.BreakupWhatsappGirlfriendSecondMessageNotification);
+        AdvanceStateIfIn(State.BreakupWhatsappGirlfriendSecondMessageNotification,
+            State.NudepicsWhatsappGirlfriendNotification,State.BreakupWhatsappGirlfriendSecondMessageNotification);
     }
 
     private void ShowBuddyInternal()

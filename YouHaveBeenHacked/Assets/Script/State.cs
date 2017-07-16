@@ -23,7 +23,6 @@
     FacebookShitpostFacebookLogin,
     FacebookShitpostFacebookForgotPassword,
     FacebookShitpostMailNotification,
-    FacebookShitpostMailLogin,
     FacebookShitpostMailLoginFailed,
     MailIsGoneWhatsappBuddyNotification,
     MailIsGoneWhatsappBuddyView,
@@ -32,7 +31,6 @@
     NudepicsInstagramNotification,
     NudepicsInstagramView,
     PhoneGoneWhatsappBuddyProtectPhoneNotification,
-    PhoneGoneWhatsappBuddyProtectPhoneView,
     PhoneGoneLocked,
     LetterBankAccountEmpty,
     End

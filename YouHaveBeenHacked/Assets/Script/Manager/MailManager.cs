@@ -27,8 +27,6 @@ public class MailManager : Manager
             case State.FacebookShitpostMailNotification:
                 Notification.SetActive(true);
                 SoundManager.SOUND_MANAGER.PlayEmailNotification();
-                break;
-            case State.FacebookShitpostMailLogin:
                 MailCatView.SetActive(false);
                 MailLogin.SetActive(true);
                 break;
