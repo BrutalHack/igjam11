@@ -15,6 +15,9 @@ public class HandyManager : Manager
     public Sprite YourAvatar;
     public Sprite GFAvatar;
     public Sprite BuddyAvatar;
+    public RectTransform BuddyButton;
+    public RectTransform GFButton;
+
     public override void HandleNewState(State state)
     {
         switch (state)
@@ -26,20 +29,22 @@ public class HandyManager : Manager
             case State.CatPictureMailLogin:
                 break;
             case State.BreakupWhatsappGirlfriendNotification:
-                AddMessage("It's over, asshole!",SetupWhatsappPrefab.ImagePosition.Right, GFAvatar,ContentFreundin);
+                AddMessage("It's over, asshole!", SetupWhatsappPrefab.ImagePosition.Right, GFAvatar, ContentFreundin);
                 break;
             case State.BreakupWhatsappGirlfriendView:
                 WaitAndNextState(5f);
                 break;
             case State.BreakupWhatsappBuddyNotification:
-                AddMessage("What that on Facebook?",SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar,ContentKumpel);
+                AddMessage("What that on Facebook?", SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar,
+                    ContentKumpel);
                 break;
             case State.BreakupWhatsappBuddyView:
                 break;
         }
     }
 
-    private void AddMessage(string text, SetupWhatsappPrefab.ImagePosition imagePosition, Sprite image, GameObject targetPanel)
+    private void AddMessage(string text, SetupWhatsappPrefab.ImagePosition imagePosition, Sprite image,
+        GameObject targetPanel)
     {
         var newMessage = Instantiate(messagePrefab);
         var setup = newMessage.GetComponent<SetupWhatsappPrefab>();
@@ -89,19 +94,33 @@ public class HandyManager : Manager
 
     private void ShowBuddyInternal()
     {
-        ContentFreundin.SetActive(
-            false);
+        ContentFreundin.SetActive(false);
         ContentKumpel.SetActive(true);
+        SetActiveTabButton(BuddyButton);
         SendButton.panel = ContentKumpel.GetComponent<RectTransform>();
         ScrollView.content = ContentKumpel.GetComponent<RectTransform>();
     }
 
+    private void SetActiveTabButton(RectTransform tabButton)
+    {
+        if (tabButton.Equals(BuddyButton))
+        {
+            BuddyButton.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.7f);
+
+            GFButton.GetComponent<Image>().color = new Color(0.0f, 0.0f, 0.0f, 0.3f);
+        }
+        else
+        {
+            GFButton.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.7f);
+            BuddyButton.GetComponent<Image>().color = new Color(0.0f, 0.0f, 0.0f, 0.3f);
+        }
+    }
+
     private void ShowGFInternal()
     {
-        ContentFreundin.SetActive(
-            true);
-        ContentKumpel.SetActive(
-            false);
+        ContentFreundin.SetActive(true);
+        ContentKumpel.SetActive(false);
+        SetActiveTabButton(GFButton);
         SendButton.panel = ContentFreundin.GetComponent<RectTransform>();
         ScrollView.content = ContentFreundin.GetComponent<RectTransform>();
     }
@@ -116,8 +135,8 @@ public class HandyManager : Manager
 
     private void ScrollToBottom()
     {
-        Canvas.ForceUpdateCanvases ();
-        ScrollView.verticalScrollbar.value=0f;
-        Canvas.ForceUpdateCanvases ();
+        Canvas.ForceUpdateCanvases();
+        ScrollView.verticalScrollbar.value = 0f;
+        Canvas.ForceUpdateCanvases();
     }
 }
