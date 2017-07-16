@@ -10,8 +10,8 @@ public class SoundManager : MonoBehaviour
 	public AudioClip FacebookNotification;
 	public AudioClip EmailNotification;
 	public AudioClip WhatsupNotification;
-	private float _volume = 0.3f;
-	private float _volumeStep = 0.05f;
+	private float _volume = 0.4f;
+	private float _volumeStep = 0.02f;
 	private int _dramaLevel;
 
 	// Use this for initialization
