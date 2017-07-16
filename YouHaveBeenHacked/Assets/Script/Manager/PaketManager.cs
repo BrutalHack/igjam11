@@ -13,6 +13,7 @@ public class PaketManager : Manager
         {
                 case State.LetterOneAndTwo:
                 case State.LetterBankAccountEmpty:
+                case State.TwitterTimeline:
                     return;
         }
         Incoming();
