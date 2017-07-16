@@ -22,6 +22,7 @@ public class HandyManager : Manager
     public RectTransform BuddyButton;
     public RectTransform GFButton;
     public GameObject LockedPhone;
+
     public override void HandleNewState(State state)
     {
         switch (state)
@@ -125,9 +126,14 @@ public class HandyManager : Manager
                 AddMessage("but first! call your bank and credit card company... anything financial!",
                     SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar, ContentKumpel);
                 break;
+            case State.PhoneGoneWhatsappBuddyProtectPhoneView:
+                WaitAndNextState(15);
+                break;
             case State.PhoneGoneLocked:
+                HandyOpen.SetActive(false);
+                LockedPhone.SetActive(true);
                 notifyBuddy(false);
-                WaitAndNextState();
+                WaitAndNextState(5);
                 break;
         }
     }
@@ -166,7 +172,7 @@ public class HandyManager : Manager
         {
             HandyOpen.gameObject.SetActive(true);
         }
-        
+
         HandyGlassPane.gameObject.SetActive(true);
         HandyClosed.gameObject.SetActive(false);
         switch (StateManager.State)
@@ -175,7 +181,7 @@ public class HandyManager : Manager
             case State.BreakupWhatsappBuddyNotification:
             case State.FacebookShitpostWhatsappBuddyNotification:
             case State.MailIsGoneWhatsappBuddyNotification:
-                case State.PhoneGoneWhatsappBuddyProtectPhoneNotification:
+            case State.PhoneGoneWhatsappBuddyProtectPhoneNotification:
                 ShowBuddyInternal();
                 break;
             case State.BreakupWhatsappGirlfriendNotification:
@@ -187,7 +193,7 @@ public class HandyManager : Manager
         AdvanceStateIfIn(State.CatPictureWhatsappNotification, State.BreakupWhatsappGirlfriendNotification,
             State.BreakupWhatsappBuddyNotification, State.BreakupWhatsappGirlfriendSecondMessageNotification,
             State.FacebookShitpostWhatsappBuddyNotification, State.MailIsGoneWhatsappBuddyNotification,
-            State.NudepicsWhatsappGirlfriendNotification,State.PhoneGoneWhatsappBuddyProtectPhoneNotification);
+            State.NudepicsWhatsappGirlfriendNotification, State.PhoneGoneWhatsappBuddyProtectPhoneNotification);
     }
 
     public void CloseHandy()
@@ -202,14 +208,14 @@ public class HandyManager : Manager
     {
         ShowBuddyInternal();
         AdvanceStateIfIn(State.BreakupWhatsappBuddyNotification, State.FacebookShitpostWhatsappBuddyNotification,
-            State.MailIsGoneWhatsappBuddyNotification,State.PhoneGoneWhatsappBuddyProtectPhoneNotification);
+            State.MailIsGoneWhatsappBuddyNotification, State.PhoneGoneWhatsappBuddyProtectPhoneNotification);
     }
 
     public void ShowGFMessages()
     {
         ShowGFInternal();
         AdvanceStateIfIn(State.BreakupWhatsappGirlfriendSecondMessageNotification,
-            State.NudepicsWhatsappGirlfriendNotification,State.BreakupWhatsappGirlfriendSecondMessageNotification);
+            State.NudepicsWhatsappGirlfriendNotification, State.BreakupWhatsappGirlfriendSecondMessageNotification);
     }
 
     private void ShowBuddyInternal()

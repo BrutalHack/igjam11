@@ -31,6 +31,7 @@
     NudepicsInstagramNotification,
     NudepicsInstagramView,
     PhoneGoneWhatsappBuddyProtectPhoneNotification,
+    PhoneGoneWhatsappBuddyProtectPhoneView,
     PhoneGoneLocked,
     LetterBankAccountEmpty,
     End
