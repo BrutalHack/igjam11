@@ -14,7 +14,7 @@ public class InstagramManager : Manager
                 Notification.SetActive(true);
                 CleanTimeline.SetActive(false);
                 NudeTimeline.SetActive(true);
-                WaitAndNextState();
+                WaitAndNextState(15);
                 break;
             case State.NudepicsInstagramView:
                 Notification.SetActive(false);
