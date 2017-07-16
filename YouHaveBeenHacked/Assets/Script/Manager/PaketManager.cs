@@ -5,6 +5,7 @@ public class PaketManager : Manager
 {
     public Animator Paket;
     public Image PaketContent;
+    public Button PaketGlassPane;
     
     public override void HandleNewState(State state)
     {
@@ -14,6 +15,12 @@ public class PaketManager : Manager
                 case State.LetterBankAccountEmpty:
                     return;
         }
+        Incoming();
+    }
+
+    private void Incoming()
+    {
+        PaketGlassPane.gameObject.SetActive(true);
         Paket.gameObject.SetActive(true);
         Paket.SetTrigger("Open");
     }
@@ -29,5 +36,6 @@ public class PaketManager : Manager
     {
         Debug.Log("Close Paket.");
         PaketContent.gameObject.SetActive(false);
+        PaketGlassPane.gameObject.SetActive(false);
     }
 }

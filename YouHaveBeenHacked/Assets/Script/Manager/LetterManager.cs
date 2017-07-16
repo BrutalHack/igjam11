@@ -7,6 +7,7 @@ public class LetterManager : Manager
     public Animator Letter;
     public Image LetterContent;
     public Text LetterText;
+    public Button LetterGlassPane;
     private String _oneAndTwo = "Hallo Alex,\\n Vielen Dank für den Upgrade deines Vertrags.\\n Mit freundlichen Grüßen\\n Dein 1&2 Team";
     private String _bank = "Hallo Alex,\\n dein Konto wird gespert da du es um 2.000 € überzogen hast.\\n Mit freundlichen Grüßen\\n Dein Bank";
     
@@ -26,6 +27,7 @@ public class LetterManager : Manager
 
     private void Incoming()
     {
+        LetterGlassPane.gameObject.SetActive(true);
         Letter.gameObject.SetActive(true);
         Letter.SetTrigger("Open");
         
@@ -42,6 +44,7 @@ public class LetterManager : Manager
     {
         Debug.Log("Close Letter.");
         LetterContent.gameObject.SetActive(false);
+        LetterGlassPane.gameObject.SetActive(false);
         SetNextState();
     }
 }
