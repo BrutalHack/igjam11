@@ -42,12 +42,26 @@ public class StateManager : MonoBehaviour
                 case State.FacebookShitpostMailLoginFailed:
                 case State.NudepicsWhatsappGirlfriendNotification:
                     SoundManager.SOUND_MANAGER.MoreDrama();
+                    SoundManager.SOUND_MANAGER.PlayWhatsupNotification();
                     break;
                 case State.PhoneGoneLocked:
                     SoundManager.SOUND_MANAGER.ResetVolume();
                     break;
                 case State.LetterBankAccountEmpty:
                     SoundManager.SOUND_MANAGER.PlayEndNotification();
+                    break;
+                case State.BreakupWhatsappGirlfriendNotification:
+                case State.BreakupWhatsappBuddyNotification:
+                case State.BreakupWhatsappGirlfriendSecondMessageNotification:
+                case State.CatPictureWhatsappNotification:
+                case State.MailIsGoneWhatsappBuddyNotification:
+                case State.PhoneGoneWhatsappBuddyProtectPhoneNotification:
+                    SoundManager.SOUND_MANAGER.PlayWhatsupNotification();
+                    break;
+                case  State.BreakupFacebookPublicNotification:
+                case State.FacebookShitpostFacebookNotification:
+                case State.FacebookShitpostMailNotification:
+                    SoundManager.SOUND_MANAGER.PlayFacebookNotification();
                     break;
         }
     }

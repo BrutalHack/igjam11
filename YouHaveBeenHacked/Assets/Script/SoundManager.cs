@@ -78,7 +78,7 @@ public class SoundManager : MonoBehaviour
 		PlaySound(FacebookNotification);
 	}
 
-	public void PlayEmailNitification()
+	public void PlayEmailNotification()
 	{
 		PlaySound(EmailNotification);
 	}

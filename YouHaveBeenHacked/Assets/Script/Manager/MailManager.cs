@@ -13,6 +13,7 @@ public class MailManager : Manager
         {
             case State.CatPictureMailLogin:
                 Notification.SetActive(true);
+                SoundManager.SOUND_MANAGER.PlayEmailNotification();
                 MailLogin.SetActive(true);
                 break;
             case State.CatPictureMailView:
@@ -25,6 +26,7 @@ public class MailManager : Manager
                 break;
             case State.FacebookShitpostMailNotification:
                 Notification.SetActive(true);
+                SoundManager.SOUND_MANAGER.PlayEmailNotification();
                 break;
             case State.FacebookShitpostMailLogin:
                 MailCatView.SetActive(false);
