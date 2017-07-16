@@ -4,6 +4,7 @@ using UnityEngine;
 public abstract class Manager : MonoBehaviour
 {
     public StateManager StateManager;
+    public int DefaultWaitTime=3;
 
     public void SetNextState()
     {
@@ -12,6 +13,10 @@ public abstract class Manager : MonoBehaviour
 
     public abstract void HandleNewState(State state);
 
+    public void WaitAndNextState()
+    {
+        WaitAndNextState(DefaultWaitTime);
+    }
     public void WaitAndNextState(float secondsToWait)
     {
         StartCoroutine(WaitAndNextStateInternal(secondsToWait));
