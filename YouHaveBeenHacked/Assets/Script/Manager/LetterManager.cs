@@ -8,8 +8,8 @@ public class LetterManager : Manager
     public Image LetterContent;
     public Text LetterText;
     public Button LetterGlassPane;
-    private String _oneAndTwo = "Hallo Alex,\\n Vielen Dank für den Upgrade deines Vertrags.\\n Mit freundlichen Grüßen\\n Dein 1&2 Team";
-    private String _bank = "Hallo Alex,\\n dein Konto wird gespert da du es um 2.000 € überzogen hast.\\n Mit freundlichen Grüßen\\n Dein Bank";
+    private String _oneAndTwo = "Dear Alex,\\n Thank you for upgrading your contract with us. \\n Kind regards\\n Your 1&2 Team";
+    private String _bank = "Dear Alex,\\n your bank account is overdrawn by 2000€ and will therefore be locked.\\n Kind regards\\n Your Bank";
     
     public override void HandleNewState(State state)
     {

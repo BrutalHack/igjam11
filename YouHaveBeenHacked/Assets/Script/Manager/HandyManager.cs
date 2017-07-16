@@ -68,9 +68,6 @@ public class HandyManager : Manager
                     SetupWhatsappPrefab.ImagePosition.Left, YourAvatar, ContentFreundin);
                 break;
             case State.BreakupWhatsappGirlfriendSecondMessageView:
-
-                break;
-            case State.BreakupWhatsappGirlfriendSecondMessageAnswered:
                 notifyGF(false);
                 WaitAndNextState();
                 break;
@@ -94,15 +91,11 @@ public class HandyManager : Manager
                 notifyBuddy(true);
                 break;
             case State.MailIsGoneWhatsappBuddyView:
-                break;
-            case State.MailIsGoneWhatsappBuddyAnswered:
                 AddMessage("I don't know, I can't login to my stalkbook or mail!",
                     SetupWhatsappPrefab.ImagePosition.Left, YourAvatar,
                     ContentKumpel);
                 AddMessage("You're an IT guy, or? What can I do?", SetupWhatsappPrefab.ImagePosition.Left, YourAvatar,
                     ContentKumpel);
-                break;
-            case State.MailIsGoneWhatsappBuddyHaveIBeenPwned:
                 notifyBuddy(false);
                 AddMessage("This is bad. You could check if your account was leaked on haveibeenpwned.com...",
                     SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar, ContentKumpel);
