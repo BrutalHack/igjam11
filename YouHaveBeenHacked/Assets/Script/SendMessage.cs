@@ -10,8 +10,8 @@ public class SendMessage : MonoBehaviour
 	public void SendStuff()
 	{
 		var newMessage = Instantiate(prefab);
-		var setup = newMessage.GetComponent<Setup>();
-		setup.layout = Setup.ImagePosition.Left;
+		var setup = newMessage.GetComponent<SetupWhatsappPrefab>();
+		setup.Layout = SetupWhatsappPrefab.ImagePosition.Left;
 		setup.Text = InputField.text;
 		newMessage.transform.SetParent(panel.transform,false);
 		Canvas.ForceUpdateCanvases ();

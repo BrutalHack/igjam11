@@ -11,28 +11,42 @@ public class HandyManager : Manager
     public Button HandyClosed;
     public SendMessage SendButton;
     public ScrollRect ScrollView;
-
+    public RectTransform messagePrefab;
+    public Sprite YourAvatar;
+    public Sprite GFAvatar;
+    public Sprite BuddyAvatar;
     public override void HandleNewState(State state)
     {
         switch (state)
         {
             case State.CatPictureWhatsappNotification:
-                ShowBuddyMessages();
                 break;
             case State.CatPictureWhatsappView:
                 break;
             case State.CatPictureMailLogin:
                 break;
             case State.BreakupWhatsappGirlfriendNotification:
-                ShowGFMessages();
+                AddMessage("It's over, asshole!",SetupWhatsappPrefab.ImagePosition.Right, GFAvatar,ContentFreundin);
                 break;
             case State.BreakupWhatsappGirlfriendView:
+                WaitAndNextState(5f);
                 break;
             case State.BreakupWhatsappBuddyNotification:
+                AddMessage("What that on Facebook?",SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar,ContentKumpel);
                 break;
             case State.BreakupWhatsappBuddyView:
                 break;
         }
+    }
+
+    private void AddMessage(string text, SetupWhatsappPrefab.ImagePosition imagePosition, Sprite image, GameObject targetPanel)
+    {
+        var newMessage = Instantiate(messagePrefab);
+        var setup = newMessage.GetComponent<SetupWhatsappPrefab>();
+        setup.Layout = imagePosition;
+        setup.Text = text;
+        setup.Sprite = image;
+        newMessage.transform.SetParent(targetPanel.transform, false);
     }
 
     public void OpenHandy()
@@ -40,6 +54,16 @@ public class HandyManager : Manager
         HandyOpen.gameObject.SetActive(true);
         HandyGlassPane.gameObject.SetActive(true);
         HandyClosed.gameObject.SetActive(false);
+        switch (StateManager.State)
+        {
+            case State.CatPictureWhatsappNotification:
+            case State.BreakupWhatsappBuddyNotification:
+                ShowBuddyInternal();
+                break;
+            case State.BreakupWhatsappGirlfriendNotification:
+                ShowGFInternal();
+                break;
+        }
         AdvanceStateIfIn(State.CatPictureWhatsappNotification, State.BreakupWhatsappGirlfriendNotification,
             State.BreakupWhatsappBuddyNotification);
     }
@@ -88,5 +112,12 @@ public class HandyManager : Manager
         {
             StateManager.NextState();
         }
+    }
+
+    private void ScrollToBottom()
+    {
+        Canvas.ForceUpdateCanvases ();
+        ScrollView.verticalScrollbar.value=0f;
+        Canvas.ForceUpdateCanvases ();
     }
 }

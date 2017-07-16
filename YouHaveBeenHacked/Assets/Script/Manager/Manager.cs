@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public abstract class Manager : MonoBehaviour
 {
@@ -10,4 +11,14 @@ public abstract class Manager : MonoBehaviour
     }
 
     public abstract void HandleNewState(State state);
+
+    public void WaitAndNextState(float secondsToWait)
+    {
+        StartCoroutine(WaitAndNextStateInternal(secondsToWait));
+    }
+    private IEnumerator WaitAndNextStateInternal(float secondsToWait)
+    {
+        yield return new WaitForSeconds(secondsToWait);
+        StateManager.NextState();
+    }
 }

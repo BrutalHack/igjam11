@@ -15,14 +15,8 @@ public class TwitterManager : Manager
             case State.TwitterTimeline:
                 TwitterLogin.gameObject.SetActive(false);
                 TwitterTimeline.gameObject.SetActive(true);
-                StartCoroutine(WaitAndNextState());
+                WaitAndNextState(SecondsToWaitInTimeline);
                 break;
         }
-    }
-
-    private IEnumerator WaitAndNextState()
-    {
-        yield return new WaitForSeconds(SecondsToWaitInTimeline);
-        StateManager.NextState();
     }
 }
