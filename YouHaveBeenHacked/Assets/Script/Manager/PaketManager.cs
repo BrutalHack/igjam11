@@ -29,6 +29,5 @@ public class PaketManager : Manager
     {
         Debug.Log("Close Paket.");
         PaketContent.gameObject.SetActive(false);
-        SetNextState();
     }
 }
