@@ -153,6 +153,7 @@ public class HandyManager : Manager
         setup.Text = text;
         setup.Sprite = image;
         newMessage.transform.SetParent(targetPanel.transform, false);
+        ScrollToBottom();
     }
 
     public void OpenHandy()
