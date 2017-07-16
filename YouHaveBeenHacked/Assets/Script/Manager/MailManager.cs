@@ -1,9 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MailManager : Manager
 {
     public GameObject Notification;
+    public GameObject MailLogin;
+    public GameObject MailCatView;
+    public GameObject MailLoginFailed;
 
     public override void HandleNewState(State state)
     {
@@ -11,8 +13,11 @@ public class MailManager : Manager
         {
             case State.CatPictureMailLogin:
                 Notification.SetActive(true);
+                MailLogin.SetActive(true);
                 break;
             case State.CatPictureMailView:
+                MailLogin.SetActive(false);
+                MailCatView.SetActive(true);
                 Notification.SetActive(false);
                 WaitAndNextState();
                 break;

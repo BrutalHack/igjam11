@@ -12,6 +12,9 @@ public class TwitterManager : Manager
     {
         switch (state)
         {
+            case State.TwitterLogin:
+                TwitterLogin.gameObject.SetActive(true);
+                break;
             case State.TwitterTimeline:
                 TwitterLogin.gameObject.SetActive(false);
                 TwitterTimeline.gameObject.SetActive(true);
