@@ -5,6 +5,11 @@ public class SoundManager : MonoBehaviour
 
 	public static SoundManager SOUND_MANAGER;
 	public AudioSource[] Music;
+	public AudioSource SfxSource;
+	public AudioClip LoginSound;
+	public AudioClip FacebookNotification;
+	public AudioClip EmailNotification;
+	public AudioClip WhatsupNotification;
 	private float _volume = 0.3f;
 	private float _volumeStep = 0.05f;
 	private int _dramaLevel;
@@ -23,6 +28,7 @@ public class SoundManager : MonoBehaviour
 		
 		DontDestroyOnLoad(SOUND_MANAGER);
 		ResetVolume();
+		SfxSource.volume = _volume;
 	}
 
 	void Update()
@@ -57,5 +63,36 @@ public class SoundManager : MonoBehaviour
 			Music[_dramaLevel].volume = _volume;
 		}
 		_dramaLevel++;
+	}
+
+	public void PlayLoginSound()
+	{
+		PlaySound(LoginSound);
+	}
+
+	public void PlayFacebookNotification()
+	{
+		PlaySound(FacebookNotification);
+	}
+
+	public void PlayEmailNitification()
+	{
+		PlaySound(EmailNotification);
+	}
+
+	public void PlayWhatsupNotification()
+	{
+		PlaySound(WhatsupNotification);
+	}
+	
+	public void PlaySound(AudioClip clip)
+	{
+		if (clip == null)
+		{
+			Debug.LogWarning("SfxClip is missing!");
+			return;
+		}
+		SfxSource.clip = clip;
+		SfxSource.Play();
 	}
 }
