@@ -27,9 +27,13 @@ public class MailManager : Manager
                 Notification.SetActive(true);
                 break;
             case State.FacebookShitpostMailLogin:
+                MailCatView.SetActive(false);
+                MailLogin.SetActive(true);
                 break;
             case State.FacebookShitpostMailLoginFailed:
                 Notification.SetActive(false);
+                MailLogin.SetActive(false);
+                MailLoginFailed.SetActive(true);
                 WaitAndNextState();
                 break;
         }
