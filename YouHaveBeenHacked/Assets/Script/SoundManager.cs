@@ -10,6 +10,8 @@ public class SoundManager : MonoBehaviour
 	public AudioClip FacebookNotification;
 	public AudioClip EmailNotification;
 	public AudioClip WhatsupNotification;
+	public AudioClip DeliveryNotification;
+	public AudioClip OpenNotification;
 	private float _volume = 0.4f;
 	private float _volumeStep = 0.02f;
 	private int _dramaLevel;
@@ -84,7 +86,17 @@ public class SoundManager : MonoBehaviour
 	{
 		PlaySound(WhatsupNotification);
 	}
-	
+
+	public void PlayDeliveryNotification()
+	{
+		PlaySound(DeliveryNotification);
+	}
+
+	public void PlayOpenNotification()
+	{
+		PlaySound(OpenNotification);
+	}
+
 	public void PlaySound(AudioClip clip)
 	{
 		if (clip == null)

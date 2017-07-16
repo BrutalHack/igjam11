@@ -22,6 +22,7 @@ public class PaketManager : Manager
         PaketGlassPane.gameObject.SetActive(true);
         Paket.gameObject.SetActive(true);
         Paket.SetTrigger("Open");
+        SoundManager.SOUND_MANAGER.PlayDeliveryNotification();
     }
 
     public void OpenPaket()
@@ -29,6 +30,7 @@ public class PaketManager : Manager
         Debug.Log("Open Paket.");
         Paket.gameObject.SetActive(false);
         PaketContent.gameObject.SetActive(true);
+        SoundManager.SOUND_MANAGER.PlayOpenNotification();
     }
 
     public void ClosePaket()
