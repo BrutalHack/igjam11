@@ -174,7 +174,7 @@ public class HandyManager : Manager
                 break;
         }
         AdvanceStateIfIn(State.CatPictureWhatsappNotification, State.BreakupWhatsappGirlfriendNotification,
-            State.BreakupWhatsappBuddyNotification, State.BreakupWhatsappGirlfriendSecondMessageNotification);
+            State.BreakupWhatsappBuddyNotification, State.BreakupWhatsappGirlfriendSecondMessageNotification,State.FacebookShitpostWhatsappBuddyNotification);
     }
 
     public void CloseHandy()
@@ -187,7 +187,7 @@ public class HandyManager : Manager
     public void ShowBuddyMessages()
     {
         ShowBuddyInternal();
-        AdvanceStateIfIn(State.BreakupWhatsappBuddyNotification);
+        AdvanceStateIfIn(State.BreakupWhatsappBuddyNotification,State.FacebookShitpostWhatsappBuddyNotification);
     }
 
     public void ShowGFMessages()

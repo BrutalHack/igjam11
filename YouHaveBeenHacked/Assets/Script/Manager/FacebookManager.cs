@@ -18,8 +18,6 @@ public class FacebookManager : Manager
                 Notification.SetActive(true);
                 TimelineBreakup.SetActive(true);
                 break;
-            case State.BreakupFacebookPublicView:
-                break;
             case State.BreakupFacebookLogin:
                 TimelineBreakup.SetActive(false);
                 Login.SetActive(true);
@@ -38,8 +36,6 @@ public class FacebookManager : Manager
                 Notification.SetActive(true);
                 TimelineBreakPostDeleted.SetActive(false);
                 TimelineCrappost.SetActive(true);
-                break;
-            case State.FacebookShitpostFacebookView:
                 break;
             case State.FacebookShitpostFacebookLogin:
                 TimelineCrappost.SetActive(false);
