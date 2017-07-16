@@ -7,8 +7,8 @@ public class LetterManager : Manager
     public Animator Letter;
     public Image LetterContent;
     public Text LetterText;
-    private String _oneAndTwo = "Hallo Alex,\\n vielen dank für den Upgrade deines Vertrags.\\n Mit freundlichen Grüßen\\n 1&2 Team";
-    private String _bank = "Hallo Alex,\\n dein Konto wird gespert da du es um 2.000 € überzogen hast.\\n Mit freundlichen Grüßen\\n Bank";
+    private String _oneAndTwo = "Hallo Alex,\\n Vielen Dank für den Upgrade deines Vertrags.\\n Mit freundlichen Grüßen\\n Dein 1&2 Team";
+    private String _bank = "Hallo Alex,\\n dein Konto wird gespert da du es um 2.000 € überzogen hast.\\n Mit freundlichen Grüßen\\n Dein Bank";
     
     public override void HandleNewState(State state)
     {

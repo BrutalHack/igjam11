@@ -8,6 +8,12 @@ public class PaketManager : Manager
     
     public override void HandleNewState(State state)
     {
+        switch (state)
+        {
+                case State.LetterOneAndTwo:
+                case State.LetterBankAccountEmpty:
+                    return;
+        }
         Paket.gameObject.SetActive(true);
         Paket.SetTrigger("Open");
     }
