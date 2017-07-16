@@ -28,6 +28,8 @@ public class HandyManager : Manager
         {
             case State.CatPictureWhatsappNotification:
                 notifyBuddy(true);
+                AddMessage("Hey dude, I sent you the best cat picture via mail!",
+                    SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar, ContentKumpel);
                 break;
             case State.CatPictureWhatsappView:
                 notifyBuddy(false);
@@ -37,7 +39,10 @@ public class HandyManager : Manager
                 break;
             case State.BreakupWhatsappGirlfriendNotification:
                 notifyGF(true);
-                AddMessage("It's over, asshole!", SetupWhatsappPrefab.ImagePosition.Right, GFAvatar, ContentFreundin);
+                AddMessage("What the fuck is wrong with you?!", SetupWhatsappPrefab.ImagePosition.Right, GFAvatar,
+                    ContentFreundin);
+                AddMessage("Have fun with your cheap whore, you jerk!", SetupWhatsappPrefab.ImagePosition.Right,
+                    GFAvatar, ContentFreundin);
                 break;
             case State.BreakupWhatsappGirlfriendView:
                 notifyGF(false);
@@ -45,7 +50,8 @@ public class HandyManager : Manager
                 break;
             case State.BreakupWhatsappBuddyNotification:
                 notifyBuddy(true);
-                AddMessage("Whats that on Facebook?", SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar,
+                AddMessage("Woah, you and Vanessa? She's hot, but weren't you with Laura?",
+                    SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar,
                     ContentKumpel);
                 break;
             case State.BreakupWhatsappBuddyView:
@@ -54,9 +60,15 @@ public class HandyManager : Manager
                 break;
             case State.BreakupWhatsappGirlfriendSecondMessageNotification:
                 notifyGF(true);
+                AddMessage("Oh wow... think that changes anything?", SetupWhatsappPrefab.ImagePosition.Right, GFAvatar,
+                    ContentFreundin);
+                AddMessage("I don't know what happened on stalkbook, that wasn't me!",
+                    SetupWhatsappPrefab.ImagePosition.Left, YourAvatar, ContentFreundin);
+                AddMessage("I must have been hacked, I haven't seen Vanessa in Ages!",
+                    SetupWhatsappPrefab.ImagePosition.Left, YourAvatar, ContentFreundin);
                 break;
             case State.BreakupWhatsappGirlfriendSecondMessageView:
-                
+
                 break;
             case State.BreakupWhatsappGirlfriendSecondMessageAnswered:
                 notifyGF(false);
@@ -64,24 +76,48 @@ public class HandyManager : Manager
                 break;
             case State.FacebookShitpostWhatsappBuddyNotification:
                 notifyBuddy(true);
+                AddMessage("Hey dude, what the hell is that on stalkbook? you mad?",
+                    SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar,
+                    ContentKumpel);
+                AddMessage("Again? I think I was hacked, I didn't post anything!",
+                    SetupWhatsappPrefab.ImagePosition.Left, YourAvatar,
+                    ContentKumpel);
                 break;
             case State.FacebookShitpostWhatsappBuddyView:
                 notifyBuddy(false);
                 WaitAndNextState();
                 break;
             case State.MailIsGoneWhatsappBuddyNotification:
+                AddMessage("Damn, you okay bro? Can I help?", SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar,
+                    ContentKumpel);
+
                 notifyBuddy(true);
                 break;
             case State.MailIsGoneWhatsappBuddyView:
                 break;
             case State.MailIsGoneWhatsappBuddyAnswered:
+                AddMessage("I don't know, I can't login to my stalkbook or mail!",
+                    SetupWhatsappPrefab.ImagePosition.Left, YourAvatar,
+                    ContentKumpel);
+                AddMessage("You're an IT guy, or? What can I do?", SetupWhatsappPrefab.ImagePosition.Left, YourAvatar,
+                    ContentKumpel);
                 break;
             case State.MailIsGoneWhatsappBuddyHaveIBeenPwned:
                 notifyBuddy(false);
+                AddMessage("This is bad. You could check if your account was leaked on haveibeenpwned.com...",
+                    SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar, ContentKumpel);
+                AddMessage("But first we have to fix this ASAP", SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar,
+                    ContentKumpel);
                 WaitAndNextState();
                 break;
             case State.NudepicsWhatsappGirlfriendNotification:
                 notifyGF(true);
+                AddMessage("I just saw that on instakilo! Seriously?", SetupWhatsappPrefab.ImagePosition.Right,
+                    GFAvatar, ContentFreundin);
+                AddMessage("I can't believe I ever trusted you! Is this funny?",
+                    SetupWhatsappPrefab.ImagePosition.Right, GFAvatar, ContentFreundin);
+                AddMessage("My lawyer will kill you! You will lose everything!",
+                    SetupWhatsappPrefab.ImagePosition.Right, GFAvatar, ContentFreundin);
                 break;
             case State.NudepicsWhatsappGirlfriendView:
                 notifyGF(false);
@@ -89,6 +125,12 @@ public class HandyManager : Manager
                 break;
             case State.PhoneGoneWhatsappBuddyProtectPhoneNotification:
                 notifyBuddy(true);
+                AddMessage("Activate two factor authentication on any non-hacked accounts!",
+                    SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar, ContentKumpel);
+                AddMessage("And you better call your Phone Provider, before he locks it online.",
+                    SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar, ContentKumpel);
+                AddMessage("but first! call your bank and credit card company... anything financial!",
+                    SetupWhatsappPrefab.ImagePosition.Right, BuddyAvatar, ContentKumpel);
                 break;
             case State.PhoneGoneWhatsappBuddyProtectPhoneView:
                 break;
@@ -134,11 +176,12 @@ public class HandyManager : Manager
                 ShowBuddyInternal();
                 break;
             case State.BreakupWhatsappGirlfriendNotification:
+            case State.BreakupWhatsappGirlfriendSecondMessageNotification:
                 ShowGFInternal();
                 break;
         }
         AdvanceStateIfIn(State.CatPictureWhatsappNotification, State.BreakupWhatsappGirlfriendNotification,
-            State.BreakupWhatsappBuddyNotification);
+            State.BreakupWhatsappBuddyNotification, State.BreakupWhatsappGirlfriendSecondMessageNotification);
     }
 
     public void CloseHandy()
@@ -157,6 +200,7 @@ public class HandyManager : Manager
     public void ShowGFMessages()
     {
         ShowGFInternal();
+        AdvanceStateIfIn(State.BreakupWhatsappGirlfriendSecondMessageNotification);
     }
 
     private void ShowBuddyInternal()

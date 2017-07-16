@@ -38,6 +38,7 @@ public class LetterManager : Manager
         Debug.Log("Open Letter.");
         Letter.gameObject.SetActive(false);
         LetterContent.gameObject.SetActive(true);
+        SoundManager.SOUND_MANAGER.PlayOpenNotification();
     }
 
     public void CloseLetter()

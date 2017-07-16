@@ -6,16 +6,15 @@ public class PaketManager : Manager
     public Animator Paket;
     public Image PaketContent;
     public Button PaketGlassPane;
-    
+
     public override void HandleNewState(State state)
     {
         switch (state)
         {
-                case State.LetterOneAndTwo:
-                case State.LetterBankAccountEmpty:
-                    return;
+            case State.BreakupFacebookLogin:
+                Incoming();
+                return;
         }
-        Incoming();
     }
 
     private void Incoming()
@@ -23,6 +22,7 @@ public class PaketManager : Manager
         PaketGlassPane.gameObject.SetActive(true);
         Paket.gameObject.SetActive(true);
         Paket.SetTrigger("Open");
+        SoundManager.SOUND_MANAGER.PlayDeliveryNotification();
     }
 
     public void OpenPaket()
@@ -30,6 +30,7 @@ public class PaketManager : Manager
         Debug.Log("Open Paket.");
         Paket.gameObject.SetActive(false);
         PaketContent.gameObject.SetActive(true);
+        SoundManager.SOUND_MANAGER.PlayOpenNotification();
     }
 
     public void ClosePaket()
