@@ -6,17 +6,15 @@ public class PaketManager : Manager
     public Animator Paket;
     public Image PaketContent;
     public Button PaketGlassPane;
-    
+
     public override void HandleNewState(State state)
     {
         switch (state)
         {
-                case State.LetterOneAndTwo:
-                case State.LetterBankAccountEmpty:
-                case State.TwitterTimeline:
-                    return;
+            case State.BreakupFacebookLogin:
+                Incoming();
+                return;
         }
-        Incoming();
     }
 
     private void Incoming()

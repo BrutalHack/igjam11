@@ -56,7 +56,7 @@ public class HandyManager : Manager
                 notifyGF(true);
                 break;
             case State.BreakupWhatsappGirlfriendSecondMessageView:
-                
+
                 break;
             case State.BreakupWhatsappGirlfriendSecondMessageAnswered:
                 notifyGF(false);
@@ -134,11 +134,12 @@ public class HandyManager : Manager
                 ShowBuddyInternal();
                 break;
             case State.BreakupWhatsappGirlfriendNotification:
+            case State.BreakupWhatsappGirlfriendSecondMessageNotification:
                 ShowGFInternal();
                 break;
         }
         AdvanceStateIfIn(State.CatPictureWhatsappNotification, State.BreakupWhatsappGirlfriendNotification,
-            State.BreakupWhatsappBuddyNotification);
+            State.BreakupWhatsappBuddyNotification, State.BreakupWhatsappGirlfriendSecondMessageNotification);
     }
 
     public void CloseHandy()
@@ -157,6 +158,7 @@ public class HandyManager : Manager
     public void ShowGFMessages()
     {
         ShowGFInternal();
+        AdvanceStateIfIn(State.BreakupWhatsappGirlfriendSecondMessageNotification);
     }
 
     private void ShowBuddyInternal()
