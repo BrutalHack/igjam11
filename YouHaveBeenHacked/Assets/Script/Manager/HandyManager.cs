@@ -21,7 +21,7 @@ public class HandyManager : Manager
     public Sprite BuddyAvatar;
     public RectTransform BuddyButton;
     public RectTransform GFButton;
-
+    public GameObject LockedPhone;
     public override void HandleNewState(State state)
     {
         switch (state)
@@ -157,7 +157,15 @@ public class HandyManager : Manager
 
     public void OpenHandy()
     {
-        HandyOpen.gameObject.SetActive(true);
+        if (StateManager.State == State.PhoneGoneLocked || StateManager.State == State.End)
+        {
+            LockedPhone.SetActive(true);
+        }
+        else
+        {
+            HandyOpen.gameObject.SetActive(true);
+        }
+        
         HandyGlassPane.gameObject.SetActive(true);
         HandyClosed.gameObject.SetActive(false);
         switch (StateManager.State)
@@ -184,6 +192,7 @@ public class HandyManager : Manager
     public void CloseHandy()
     {
         HandyOpen.SetActive(false);
+        LockedPhone.SetActive(false);
         HandyClosed.gameObject.SetActive(true);
         HandyGlassPane.SetActive(false);
     }
