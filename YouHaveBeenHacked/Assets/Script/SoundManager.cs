@@ -12,6 +12,7 @@ public class SoundManager : MonoBehaviour
 	public AudioClip WhatsupNotification;
 	public AudioClip DeliveryNotification;
 	public AudioClip OpenNotification;
+	public AudioClip EndNotification;
 	private float _volume = 0.4f;
 	private float _volumeStep = 0.02f;
 	private int _dramaLevel;
@@ -95,6 +96,11 @@ public class SoundManager : MonoBehaviour
 	public void PlayOpenNotification()
 	{
 		PlaySound(OpenNotification);
+	}
+
+	public void PlayEndNotification()
+	{
+		PlaySound(EndNotification);
 	}
 
 	public void PlaySound(AudioClip clip)

@@ -21,6 +21,7 @@ public class StateManager : MonoBehaviour
     {
         State++;
         DebugText.text = State.ToString();
+        UpdateDrama(State);
         TwitterManager.HandleNewState(State);
         HandyManager.HandleNewState(State);
         MailManager.HandleNewState(State);
@@ -31,4 +32,23 @@ public class StateManager : MonoBehaviour
     }
 
     public State State { get; private set; }
+
+    private void UpdateDrama(State state)
+    {
+        switch (state)
+        {
+                case State.BreakupWhatsappGirlfriendView:
+                case State.LetterOneAndTwo:
+                case State.FacebookShitpostMailLoginFailed:
+                case State.NudepicsWhatsappGirlfriendNotification:
+                    SoundManager.SOUND_MANAGER.MoreDrama();
+                    break;
+                case State.PhoneGoneLocked:
+                    SoundManager.SOUND_MANAGER.ResetVolume();
+                    break;
+                case State.LetterBankAccountEmpty:
+                    SoundManager.SOUND_MANAGER.PlayEndNotification();
+                    break;
+        }
+    }
 }
