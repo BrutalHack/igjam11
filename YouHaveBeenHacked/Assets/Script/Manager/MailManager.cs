@@ -25,6 +25,7 @@ public class MailManager : Manager
                 break;
             case State.FacebookShitpostMailLoginFailed:
                 Notification.SetActive(false);
+                WaitAndNextState();
                 break;
         }
     }
