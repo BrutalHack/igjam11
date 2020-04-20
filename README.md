@@ -3,7 +3,7 @@
 
 ![Screenshot](https://brutalhack.com/wp-content/uploads/2017/08/Screenshot-2.png)
 
-More Information at https://brutalhack.com/games/igjam11/
+Game available for free at https://brutalhack.com/games/igjam11/
 
 # Game Description
 
